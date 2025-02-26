@@ -28,7 +28,7 @@ oauth.register(
 @app.route("/")
 async def homepage(request):
     user = request.session.get("user")
-    print("starlette session", request.session)
+    # print("starlette session", request.session)
     if user:
         data = json.dumps(user)
         print(data)
@@ -44,7 +44,7 @@ async def homepage(request):
 @app.route("/login")
 async def login(request):
     redirect_uri = request.url_for("auth")
-    print(redirect_uri)
+    # print(redirect_uri)
     return await oauth.gitlab.authorize_redirect(request, redirect_uri)
 
 
