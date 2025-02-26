@@ -6,7 +6,7 @@ shiny create -g eoda-dev/py-shiny-templates -t starlette-oauth
 cd starlette-oauth
 
 uv init
-uv add -r requirements
+uv add -r requirements.txt
 
 # Add .env file with the following content
 GITLAB_CLIENT_ID=your-client-id
