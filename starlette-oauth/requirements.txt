@@ -1,5 +1,6 @@
+shiny
+uvicorn
 authlib>=1.5.0
 fastapi>=0.115.8
 shiny>=1.2.1
 starlette[full]>=0.45.3
-uvicorn
