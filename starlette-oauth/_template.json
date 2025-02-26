@@ -1,0 +1,5 @@
+{
+  "id": "starlette-oauth-app",
+  "title": "A Basic app using OAuth to secure routes",
+  "description": "A simple Starlette and Shiny app to get you started with OAuth quickly."
+}
