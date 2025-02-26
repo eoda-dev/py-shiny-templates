@@ -15,4 +15,4 @@ GITLAB_CLIENT_SECRET=your-client-secret
 uvicorn app:app
 ```
 
-Login with your GitLab credentials
+Then navigate to [http://localhost:8000](http://localhost:8000) and login with your GitLab credentials.
