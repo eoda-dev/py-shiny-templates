@@ -1,10 +1,13 @@
-import json
 import base64
+import json
+
 import uvicorn
 from shiny import App, render, ui
 
+
 def get_headers(session):
     return session.http_conn.headers
+
 
 app_ui = ui.page_fluid(
     ui.panel_title("Hello Shiny!"),
@@ -21,10 +24,12 @@ def server(input, output, session):
         client_principal = get_headers(session).get("x-ms-client-principal")
         if client_principal:
             principal = json.loads(base64.b64decode(client_principal))
-            return principal
-        
-        return json.dumps({"x-ms-client-principal": "not submitted"} | dict(headers), indent=2)
-    
+            return json.dumps(principal, indent=2)
+
+        return json.dumps(
+            {"x-ms-client-principal": "not submitted"} | dict(headers), indent=2
+        )
+
     @render.text
     def txt():
         return f"n*2 is {input.n() * 2}"
