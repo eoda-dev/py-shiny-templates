@@ -2,8 +2,6 @@
 
 ## Usage
 
-To use [fastapi-routes](fastapi-routes) template run:
-
 ```bash
 uv init
 
@@ -11,10 +9,9 @@ uv add shiny
 
 # source .venv/bin/activate
 
-shiny create -g eoda-dev/py-shiny-templates -t fastapi-routes
+shiny create -g eoda-dev/py-shiny-templates -t TEMPLATE_FOLDER
 
-cd fastapi-routes
+cd TEMPLATE_FOLDER
 uv add -r requirements.txt
 shiny run app:app
 ```
-

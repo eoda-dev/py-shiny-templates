@@ -1,0 +1,34 @@
+name: Docker Image simple-wheather-app
+
+on:
+  push:
+    branches: ["main", "dev"]
+  pull_request:
+    branches: ["main"]
+
+env:
+  IMAGE_NAME: simple-wheather-app
+  VERSION: latest
+  CONTEXT: simple-wheather-app
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the Docker image
+        run: |
+          cd $CONTEXT
+          docker build . --file Dockerfile --tag $IMAGE_NAME:$VERSION
+
+      - name: Log in to registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u token --password-stdin
+
+      - name: Push image to ghcr.io
+        run: |
+          image_id=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+          # repository name must be lowercase
+          image_id=$(echo $image_id | tr '[A-Z]' '[a-z]')
+          docker tag $IMAGE_NAME:$VERSION $image_id:$VERSION
+          docker push $image_id:$VERSION
