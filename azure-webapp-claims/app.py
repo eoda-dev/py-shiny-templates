@@ -12,8 +12,8 @@ def get_headers(session):
 def get_client_principal(session) -> dict | None:
     client_principal = get_headers(session).get("x-ms-client-principal")
     if client_principal:
-        principal = json.loads(base64.b64decode(client_principal))
-        return principal
+        client_principal = json.loads(base64.b64decode(client_principal))
+        return client_principal
 
     return None
 
@@ -45,7 +45,7 @@ def server(input, output, session):
     def principal():
         client_principal = get_client_principal(session)
         if client_principal:
-            return json.dumps(principal, indent=2)
+            return json.dumps(client_principal, indent=2)
 
         headers = get_headers(session)
         return json.dumps(
