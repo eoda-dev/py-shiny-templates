@@ -1,5 +1,5 @@
 {
-  "id": "starelette-routes-modular",
+  "id": "starlette-routes-modular",
   "title": "Multiple apps and an API",
   "description": "A simple Shiny app to get you started with routes."
 }

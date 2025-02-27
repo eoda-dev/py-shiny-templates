@@ -10,5 +10,6 @@ dependencies = [
     "gunicorn>=23.0.0",
     "itsdangerous>=2.2.0",
     "shiny>=1.2.1",
+    "shinylive>=0.7.3",
     "starlette[full]>=0.45.3",
 ]
