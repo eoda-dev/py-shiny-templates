@@ -4,3 +4,4 @@ plotly>=6.0.0
 requests>=2.32.3
 shiny>=1.2.1
 shinywidgets>=0.5.1
+gunicorn
