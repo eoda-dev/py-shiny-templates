@@ -19,7 +19,7 @@ def get_client_principal(session) -> dict | None:
 
 
 def get_claim(claims: list[dict], typ: str):
-    return [claim for claim in claims if claim["typ"] == typ][0]
+    return [claim for claim in claims if claim["typ"] == typ][0]["val"]
 
 
 app_ui = ui.page_fluid(
