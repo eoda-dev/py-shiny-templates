@@ -1,0 +1,9 @@
+services:
+  shiny_app:
+    build:
+      context: .
+    image: local/eoda-dev/basic-app:latest
+    pull_policy: always
+    ports:
+      - "3333:3333"
+    restart: always
