@@ -1,8 +1,10 @@
 FROM python:3.11
 
-RUN pip install -U pip shiny gunicorn
+WORKDIR /opt/shiny 
 
-COPY app.py /opt/shiny/app.py
+COPY . .
+
+RUN pip install -r requirements.txt
 
 EXPOSE 3333
 
