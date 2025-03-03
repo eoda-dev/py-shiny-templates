@@ -1,0 +1,5 @@
+{
+  "id": "azure-web-app-claims",
+  "title": "A basic app using ms-client-principal to secure your app",
+  "description": "A simple Shiny app to get you started quickly with Azure Web Apps."
+}

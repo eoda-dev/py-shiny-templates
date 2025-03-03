@@ -1,6 +1,5 @@
 {
   "id": "fastapi-routes",
-  "title": "A Basic app using fastapi routes",
+  "title": "A basic app mixing Shiny and FastAPI routes",
   "description": "A simple Shiny app to get you started with routes."
 }
-

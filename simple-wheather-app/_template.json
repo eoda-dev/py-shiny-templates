@@ -1,5 +1,5 @@
 {
   "id": "simple-wheather-app",
-  "title": "A Basic Wheather app",
+  "title": "A basic app using plotly",
   "description": "A simple Shiny app to get you started quickly."
 }
