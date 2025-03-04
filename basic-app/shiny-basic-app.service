@@ -1,0 +1,19 @@
+# /etc/systemd/system/shiny-app.service
+# systemctl daemon-reload
+# systemctl restart shiny-app
+
+[Unit]
+Description=Shiny app
+After=syslog.target network.target
+
+[Service]
+# Environment="PATH=/opt/shiny_apps/.venv/bin"
+User=root
+# ExecStart=/opt/shiny_apps/.venv/bin/uvicorn opt.shiny_apps.my_app.app:app --host 0.0.0.0
+ExecStart=/opt/shiny_apps/.venv/bin/gunicorn opt.shiny_apps.my_app.app:app -w 2 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:3333
+
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
