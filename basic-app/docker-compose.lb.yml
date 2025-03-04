@@ -1,6 +1,7 @@
 services:
   nginx:
     image: nginx:latest
+    restart: always
     depends_on: 
       - shiny_app
     ports:
